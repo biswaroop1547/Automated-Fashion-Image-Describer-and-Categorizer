@@ -1,6 +1,7 @@
 import os
 import string
 import numpy as np
+import pandas as pd
 import h5py
 import json
 import torch
@@ -10,6 +11,7 @@ from collections import Counter
 from random import seed, choice, sample
 from nltk.tokenize import sent_tokenize, word_tokenize
 
+text_df = pd.read_excel("dataset.xlsx")
 
 def create_input_files(dataset,
                         image_folder, 
