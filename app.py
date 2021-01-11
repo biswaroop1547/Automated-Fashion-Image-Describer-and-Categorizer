@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 
 
 st.set_page_config(
-    page_title="Moses-Improved-SMT",
-    page_icon=":star:",
+    page_title="Fashion Image Caption Creator",
+    page_icon=":dress:",
 )
 
 hide_streamlit_style = """
@@ -17,7 +17,7 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 st.markdown('''
-    # Neural Network based Optimized Pruning Strategy for Statistical Machine Translation
+    # Fashion Image Caption Creator
     ***
     ''')
 
