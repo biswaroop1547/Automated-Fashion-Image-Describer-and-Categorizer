@@ -3,7 +3,8 @@ import time
 import h5py
 import json
 from PIL import Image
-
+import requests
+from io import BytesIO
 import torch
 from torch import nn
 import torchvision
@@ -36,8 +37,7 @@ from utils import *
 from model import *
 from inference import *
 
-if __name__ == '__main__':
-
+def prediction(url = None, from_url = True, uploader_image_data = None,):
     # sets device for model and PyTorch tensors
     # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     device = torch.device("cpu")
@@ -62,13 +62,17 @@ if __name__ == '__main__':
 
     ### idx to word {0 : "word1", 1:"word2"}
     rev_word_map = {v: k for k, v in word_map.items()}
-    IMG_URL = "https://assets.ajio.com/medias/sys_master/root/20200820/cBfP/5f3d8a26f997dd2277a1e849/rozveh_maroon_printed_gown_dress.jpg"
+    if from_url:
+        IMG_URL = url
     # image = "images/pic_474.jpg"
-    image = wget.download(IMG_URL, out="testing_image.jpg")
+        image = wget.download(IMG_URL, out="testing_image.jpg")
+    else:
+        image = uploader_image_data
 
 
     ### alphas is nothing but attention weights
     seq, alphas = caption_image(encoder, decoder, image, word_map, 5)
+    # os.remove("testing_image.jpg")
     alphas = torch.FloatTensor(alphas)
 
     pred_caption = []
@@ -76,7 +80,7 @@ if __name__ == '__main__':
     for word in seq:
         pred_caption.append(rev_word_map[word])
 
-    print(pred_caption)
+    return pred_caption
 
     # image = Image.open(image)
     # image = image.resize([14 * 14, 14 * 14], Image.LANCZOS)
@@ -92,3 +96,11 @@ if __name__ == '__main__':
     #               alphas, #attention weights for every time steps
     #               rev_word_map # idx to word mapping
     #              )
+
+
+# image_url = "https://assets.ajio.com/medias/sys_master/root/20200820/cBfP/5f3d8a26f997dd2277a1e849/rozveh_maroon_printed_gown_dress.jpg"
+
+
+# response = requests.get(image_url)
+# image_data = BytesIO(response.content)
+# print(prediction(from_url = False, uploader_image_data = image_data))
