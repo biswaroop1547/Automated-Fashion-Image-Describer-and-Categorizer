@@ -52,11 +52,10 @@ if image_data is None and image_url:
         st.write("Please enter a valid URL")
 
 elif image_data:
-    # try:
-    st.write("hey")
-    image_data = BytesIO(image_data.read())
-    pred_text = " ".join(prediction(from_url = False, uploader_image_data = image_data))
-    pred_text = pred_text.replace("<start> ", "").replace(" <end>", ".").capitalize()
-    st.markdown(f"### {pred_text}")
-    # except:
-    #     st.write("Some unexpected error occured..")
+    try:
+        image_data = BytesIO(image_data.read())
+        pred_text = " ".join(prediction(from_url = False, uploader_image_data = image_data))
+        pred_text = pred_text.replace("<start> ", "").replace(" <end>", ".").capitalize()
+        st.markdown(f"### {pred_text}")
+    except:
+        st.write("The file is not appropriate, so unexpected error occured...")
