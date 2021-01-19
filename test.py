@@ -31,7 +31,7 @@ import cv2
 import skimage.transform
 from scipy.misc import imread, imresize
 
-from nltk.translate.bleu_score import corpus_bleu
+# from nltk.translate.bleu_score import corpus_bleu
 
 from utils import *
 from model import *

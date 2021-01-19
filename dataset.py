@@ -9,7 +9,7 @@ from scipy.misc import imread, imresize
 from tqdm import tqdm
 from collections import Counter
 from random import seed, choice, sample
-from nltk.tokenize import sent_tokenize, word_tokenize
+# from nltk.tokenize import sent_tokenize, word_tokenize
 
 text_df = pd.read_excel("dataset.xlsx")
 
