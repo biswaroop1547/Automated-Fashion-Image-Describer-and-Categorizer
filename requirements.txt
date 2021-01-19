@@ -13,4 +13,4 @@ torch==1.7.1
 numpy==1.19.2
 Pillow==8.1.0
 scikit_learn==0.24.1
-skimage==0.0
+scikit-image
