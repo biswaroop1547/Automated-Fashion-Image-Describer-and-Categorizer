@@ -7,7 +7,7 @@ matplotlib==3.3.2
 h5py==2.8.0
 scikit_image==0.17.2
 streamlit==0.74.1
-pandas==1.2.0
+pandas
 requests==2.25.1
 torch==1.7.1
 numpy==1.19.2
