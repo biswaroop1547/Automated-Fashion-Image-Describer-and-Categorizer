@@ -27,19 +27,21 @@ st.markdown('''
     ***
     ''')
 
-options = st.sidebar.selectbox(
-            'Choose Model: ',
-            ('1', '2', '3', '4', '5')
-     )
+# options = st.sidebar.selectbox(
+#             'Choose Model: ',
+#             ('1', '2', '3', '4', '5')
+#      )
 
-st.markdown(f'## Model selected: ```{options}```')
+# st.markdown(f'## Model selected: ```{options}```')
 
-image_data = st.file_uploader("Upload file", type=["jpg", "png", "jpeg"])
+image_url = st.text_input("URL : ")
 
 st.markdown("<p style='text-align: center;'>OR</p>",
             unsafe_allow_html=True)
 
-image_url = st.text_input("URL : ")
+image_data = st.file_uploader("Upload file", type=["jpg", "png", "jpeg"])
+if(image_data):
+    st.write("Please clear the previous image before testing another one.")
 
 if image_data is None and image_url:
     try:
