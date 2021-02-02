@@ -37,7 +37,7 @@ import matplotlib.cm as cm
 import torch.backends.cudnn as cudnn
 import torch.utils.data
 
-import cv2
+# import cv2
 import skimage.transform
 from scipy.misc import imread, imresize
 
