@@ -132,3 +132,4 @@ dmypy.json
 # extras
 BEST_checkpoint_fashion_captioning_1_cap_per_img_2_min_word_freq.pth.tar
 .vscode
+
