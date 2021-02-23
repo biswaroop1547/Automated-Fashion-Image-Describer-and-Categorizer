@@ -4,6 +4,7 @@ A fully automated system which if provided with a fashion dress image then it ca
 
 The dataset is being made by me which has been scraped from Amazon, Myntra, Ajio and few other sites, on which I am constantly working upon. 
 
-currently offline since all of my AWS credits got exhausted, will be up as soon as I get a VM
 
 (Currently work in progress)
+
+_currently deployment is only offline since all of my AWS credits got exhausted, will be up as soon as I get a VM_
