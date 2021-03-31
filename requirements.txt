@@ -11,5 +11,5 @@ pandas
 requests==2.25.1
 torch==1.7.1
 numpy==1.19.2
-Pillow==8.1.0
+Pillow==8.1.1
 scikit_learn==0.24.1
